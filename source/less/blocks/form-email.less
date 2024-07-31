@@ -1,0 +1,158 @@
+.form-email {
+  position: relative;
+
+  @media (min-width: @desktop-width) {
+    width: 1174px;
+  }
+}
+
+.form-email__email {
+  width: 270px;
+  height: 62px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 18px;
+  color: @greyish-brown-opacity30;
+  border-radius: 10px;
+  border: none;
+  background-color: @white;
+
+  padding-left: 23px;
+
+  &:hover {
+    color: @greyish-brown-opacity50;
+    background-color: @pale-grey;
+  }
+
+  &:focus,
+  &:active {
+    border: 4px solid @white;
+    background-color: transparent;
+    color: @white;
+  }
+
+  &::-webkit-input-placeholder {
+    color: @greyish-brown-opacity30;
+  }
+
+  &:hover::-webkit-input-placeholder {
+    color: @greyish-brown-opacity50;
+  }
+
+  &:focus::-webkit-input-placeholder {
+    color: @white;
+  }
+
+  &:active::-webkit-input-placeholder {
+    color: @white;
+  }
+
+  &::-moz-placeholder {
+    color: @greyish-brown-opacity30;
+  }
+
+  &:hover::-moz-placeholder {
+    color: @greyish-brown-opacity50;
+  }
+
+  &:focus::-moz-placeholder {
+    color: @white;
+  }
+
+  &:active::-moz-placeholder {
+    color: @white;
+  }
+
+  &--error {
+    background-color: @white;
+    color: @color-error-text;
+  }
+
+  @media (min-width: @tablet-width) {
+    .border-left-radius (20px, 20px);
+    .border-right-radius (0, 0);
+    width: 536px;
+    height: 81px;
+    font-size: 24px;
+    line-height: 24px;
+
+    padding-left: 30px;
+  }
+
+  @media (min-width: @desktop-width) {
+    .border-left-radius (20px, 20px);
+    width: 850px;
+
+    padding-left: 35px;
+  }
+}
+
+.form-email__button {
+  position: absolute;
+  right: 0;
+  width: 60px;
+  height: 62px;
+  border-radius: 10px;
+  border: none;
+  background-color: @light-gold;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 24px;
+    right: 23px;
+    width: 10px;
+    height: 14px;
+    background-image: url("../img/triangle-arrow-right.svg");
+    background-repeat: no-repeat;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: @lighter-mango;
+  }
+
+  &:active {
+    background-color: @lighter-mango;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    opacity: 0.7;
+  }
+
+  &:active::before {
+    opacity: 0.3;
+  }
+
+  @media (min-width: @tablet-width) {
+    .border-right-radius (20px, 20px);
+    .border-left-radius (0, 0);
+    width: 82px;
+    height: 81px;
+
+    &::before {
+      top: 34px;
+      right: 36px;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    .border-right-radius (20px, 20px);
+    width: 324px;
+    height: 81px;
+
+    &::after {
+      content: "Регистрация";
+      position: absolute;
+      top: 30px;
+      left: 35px;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 24px;
+      letter-spacing: -0.9px;
+      text-align: left;
+      color: @dark-slate-blue;
+    }
+  }
+}

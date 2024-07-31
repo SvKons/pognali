@@ -1,0 +1,137 @@
+.adress {
+  .border-bottom-radius (30px, 30px);
+  background-color: @light-gold;
+  position: relative;
+  z-index: 2;
+
+  margin-top: -74px;
+
+  @media (min-width: @tablet-width) {
+    .border-bottom-radius (60px, 60px);
+  }
+}
+
+.adress__container {
+  .vertical-paddings (105px, 35px);
+  position: relative;
+  z-index: 2;
+
+  @media (min-width: @tablet-width) {
+    .vertical-paddings (121px, 82px);
+  }
+
+  @media (min-width: @desktop-width) {
+    .vertical-paddings (126px, 56px);
+    display: flex;
+    align-items: baseline;
+  }
+}
+
+.adress__name {
+  position: relative;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: @dark-blue-grey;
+
+  margin: 0;
+  padding-left: 61px;
+  padding-right: 66px;
+
+  &::before {
+    .round (45px, 45px, 50%,  @dark-blue-grey);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../img/contacts-location.svg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 14px 21px;
+  }
+
+  @media (min-width: @tablet-width) {
+    .vertical-paddings (20px, 20px);
+    font-size: 28px;
+    line-height: 28px;
+
+    padding-left: 129px;
+
+    &::before {
+      width: 68px;
+      height: 68px;
+      left: 36px;
+      background-size: 21px 31px;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    .vertical-paddings (32px, 32px);
+    padding-left: 344px;
+
+    &::before {
+      width: 90px;
+      height: 90px;
+      left: 223px;
+      background-size: 28px 43px;
+    }
+  }
+}
+
+.adress__link {
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 18px;
+  text-align: left;
+  background-color: transparent;
+  color: @dark-blue-grey;
+  text-transform: none;
+  border: 3px solid @dark-blue-grey;
+  border-radius: 10px;
+
+  margin-top: 35px;
+  padding: 17px 20px;
+
+  &:hover .adress__icon {
+    fill: @white;
+  }
+
+  &:active .adress__icon {
+    fill: @white;
+    opacity: 0.7;
+  }
+
+  @media (min-width: @tablet-width) {
+    font-size: 24px;
+    line-height: 24px;
+    text-transform: none;
+    border-radius: 20px;
+
+    margin: 0 35px;
+    margin-top: 45px;
+    padding: 23px 34px;
+
+    &::before {
+      top: 30px;
+      right: 33px;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 324px;
+
+    margin: 0;
+    margin-left: 83px;
+  }
+}
+
+.adress__wrapper {
+  margin-left: auto;
+  padding-top: 3px;
+
+  @media (min-width: @tablet-width) {
+    margin-left: auto;
+  }
+}

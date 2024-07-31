@@ -1,0 +1,253 @@
+.country-list {
+  position: relative;
+  list-style-type: none;
+
+  padding: 0;
+
+  @media (min-width: @tablet-width) {
+    padding-left: 35px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -38px;
+      left: 60px;
+      width: 141px;
+      height: 141px;
+      border-radius: 20px;
+      background-color: @pale-grey-blue;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    position: absolute;
+    padding: 0;
+
+    &::before {
+      top: -72px;
+      left: 0;
+
+      margin: 0;
+      padding: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 681px;
+      height: 81px;
+      bottom: 0;
+      left: -20px;
+      background-image: linear-gradient(to top, @pale-grey, transparent);
+    }
+  }
+}
+
+.country-list__item {
+  position: relative;
+  width: 270px;
+  max-height: 198px;
+
+  @media (min-width: @tablet-width) {
+    display: flex;
+    width: 616px;
+    margin-bottom: 9px;
+  }
+}
+
+.country-list__container {
+  .vertical-paddings (24px, 22px);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  width: 270px;
+  border-radius: 10px;
+  background-color: @white;
+
+  margin-top: -11px;
+  padding-left: 25px;
+  padding-right: 24px;
+
+  &--czech {
+    padding-top: 23px;
+    padding-bottom: 5px;
+  }
+
+  @media (min-width: @tablet-width) {
+    .border-left-radius (20px, 20px);
+    .border-right-radius (0, 0);
+    .vertical-paddings (29px, 10px);
+    position: relative;
+    z-index: 0;
+    order: 1;
+    display: block;
+    width: 508px;
+
+    margin-top: 0;
+    padding-left: 23px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 403px;
+    padding: 21px 28px;
+  }
+}
+
+.country-list__image {
+  position: relative;
+  z-index: 1;
+  width: 270px;
+  display: block;
+
+  @media (min-width: @tablet-width) {
+    position: relative;
+    z-index: 0;
+    order: 2;
+    width: 127px;
+    height: 140px;
+
+    img {
+      width: 185px;
+      height: 140px;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 173px;
+    height: 140px;
+  }
+}
+
+.country-list__image img {
+  .border-top-radius (10px, 10px);
+  display: block;
+
+  @media (min-width: @tablet-width) {
+    .border-right-radius (20px, 20px);
+    border-top-left-radius: 0;
+  }
+}
+
+.country-list__wrapper {
+  @media (min-width: @tablet-width) {
+    margin-bottom: 15px;
+
+    &--czech {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 21px;
+  }
+}
+
+.country-list__name {
+  margin: 0;
+  margin-bottom: 4px;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 21px;
+  color: @dark-grey;
+
+  @media (min-width: @tablet-width) {
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 9px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 7px;
+  }
+}
+
+.country-list__slogan {
+  font-weight: 500;
+  line-height: 18px;
+  color: @grey-opacity;
+
+  margin: 0;
+  padding-right: 25px;
+
+  br {
+    display: none;
+  }
+
+  @media (min-width: @tablet-width) {
+    font-size: 20px;
+
+    br {
+      display: block;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    font-size: 20px;
+
+    br {
+      display: none;
+    }
+  }
+}
+
+.country-list__travelers {
+  position: relative;
+  font-weight: 500;
+  line-height: 30px;
+  text-align: right;
+  color: @grey-opacity;
+
+  margin: 0;
+  padding-left: 18px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 11px;
+    height: 11px;
+    background-image: url("../img/user.png");
+    background-repeat: no-repeat;
+    background-size: 11px 11px;
+  }
+
+  @media (min-width: @tablet-width) {
+    position: relative;
+    font-size: 20px;
+    text-align: left;
+
+    padding-left: 30px;
+
+    &::before {
+      content: "";
+      top: 6px;
+      width: 21px;
+      height: 20px;
+      background-size: 21px 20px;
+    }
+  }
+}
+
+.country-list__flag {
+  position: absolute;
+  top: -100px;
+  left: 25px;
+  z-index: 3;
+
+  @media (min-width: @tablet-width) {
+    top: 16px;
+    left: 458px;
+  }
+
+  @media (min-width: @desktop-width) {
+    top: 21px;
+    left: 407px;
+  }
+}

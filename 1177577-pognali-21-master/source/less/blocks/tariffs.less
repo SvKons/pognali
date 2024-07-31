@@ -1,0 +1,155 @@
+.tariffs {
+  .border-bottom-radius (30px, 30px);
+  background-color: @pale-grey;
+  position: relative;
+  z-index: 4;
+
+  margin-top: -141px;
+
+  @media (min-width: @tablet-width) {
+    .border-bottom-radius (60px, 60px);
+  }
+
+  @media (min-width: @desktop-width) {
+    .border-bottom-radius (60px, 60px);
+  }
+}
+
+.tariffs__container {
+  .vertical-paddings (80px, 39px);
+  position: relative;
+
+  padding-left: 50px;
+  padding-right: 26px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 67px;
+    right: 27px;
+    width: 99px;
+    height: 99px;
+    background-image: url("../img/rates@1x.png");
+    background-repeat: no-repeat;
+    background-size: 99px 99px;
+  }
+
+  @media (min-width: @tablet-width) {
+    .vertical-paddings (101px, 61px);
+    padding-left: 40px;
+    padding-right: 33px;
+
+    &::before {
+      z-index: 2;
+      top: 439px;
+      right: 86px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 180px;
+      right: 40px;
+      width: 198px;
+      height: 285px;
+      border-radius: 20px;
+      background-color: @pale-grey-blue;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    .vertical-paddings (135px, 164px);
+    padding-left: 131px;
+    padding-right: 133px;
+
+    &::before {
+      width: 198px;
+      height: 198px;
+      top: 315px;
+      right: 134px;
+      background-size: 198px 198px;
+    }
+
+    &::after {
+      width: 444px;
+      height: 300px;
+      right: 246px;
+      top: 263px;
+    }
+  }
+}
+
+.tariffs__title {
+  font-size: 24px;
+  font-weight: bold;
+  color: @mango;
+  margin: 0;
+  margin-bottom: 44px;
+  padding-right: 133px;
+  line-height: 24px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 45px;
+    line-height: 45px;
+
+    margin-bottom: 76px;
+    padding-left: 106px;
+    padding-right: 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    text-align: center;
+
+    margin-bottom: 136px;
+    padding: 0;
+  }
+}
+
+.tariffs__link {
+  font-weight: bold;
+  line-height: 16px;
+  text-transform: none;
+  color: @light-navy;
+
+  margin-top: 30px;
+
+  &:hover,
+  &:focus {
+    color: @light-navy70;
+  }
+
+  &:active {
+    color: @light-navy30;
+  }
+
+  @media (min-width: @tablet-width) {
+    position: relative;
+    font-size: 20px;
+
+    margin-top: 33px;
+    padding-left: 89px;
+    padding-top: 26px;
+    padding-bottom: 26px;
+
+    &::before {
+      .round (68px, 68px, 50%, @pale-grey-blue);
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url("../img/business.svg");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: 17px 21px;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-top: 33px;
+  }
+}
+
+.tariffs__modal {
+  display: none;
+}

@@ -1,0 +1,120 @@
+.toggler {
+  position: relative;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+
+  margin-left: auto;
+  margin-top: 2px;
+
+  &--open::before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 3px;
+    top: 22px;
+    right: 0;
+    background-image: url("../img/dots.svg");
+    background-repeat: no-repeat;
+    background-size: 66px 3px;
+  }
+
+  &--open-filters::before {
+    content: "";
+    position: absolute;
+    width: 52px;
+    height: 6px;
+    top: 27px;
+    right: 0;
+    background-image: url("../img/dots.svg");
+    background-repeat: no-repeat;
+    background-size: 66px 3px;
+  }
+
+  &--close {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 1px;
+      top: 27px;
+      right: 0;
+      background-color: @dark-blue-grey;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    width: 200px;
+    height: 24px;
+
+    margin: 0;
+    margin-left: auto;
+    padding-right: 27px;
+
+    &--open::before {
+      width: 25px;
+      height: 3px;
+      top: 16px;
+      background-size: 88px 5px;
+    }
+
+    &--open-filters::before {
+      content: "";
+      position: absolute;
+      width: 77px;
+      height: 6px;
+      top: 12px;
+      right: 0;
+      background-image: url("../img/dots.svg");
+      background-repeat: no-repeat;
+      background-size: 104px 6px;
+    }
+
+    &--close {
+      width: 181px;
+
+      &::before,
+      &::after {
+        width: 24px;
+        height: 2px;
+        top: 11px;
+        right: 0;
+      }
+    }
+  }
+}
+
+.toggler__text {
+  display: none;
+
+  @media (min-width: @tablet-width) {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+    color: @dark-blue-grey;
+
+    margin: 0;
+    padding-right: 18px;
+
+    &--open {
+      display: none;
+    }
+
+    &--close {
+      display: block;
+      padding-right: 57px;
+    }
+
+    &--page-body {
+      display: block;
+    }
+  }
+}

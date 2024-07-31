@@ -1,0 +1,78 @@
+.user {
+  display: flex;
+  position: relative;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: @tablet-width) {
+    display: none;
+  }
+}
+
+.user__link {
+  position: relative;
+  font-weight: bold;
+  color: @dark-blue-grey;
+
+  &--tel {
+    .round (40px, 40px, 50%, @mango);
+
+    padding: 11px 11px;
+  }
+
+  &--email {
+    .round (40px, 40px, 50%, @lighter-mango);
+
+    padding: 11px 11px;
+  }
+
+  &--login {
+    display: block;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: center;
+    color: @dark-grey;
+    background-color: @light-gold;
+    border-radius: 25px;
+
+    padding: 6px 39px;
+  }
+
+  &--tel:hover,
+  &--tel:focus {
+    background-color: @dusty-orange;
+  }
+
+  &--email:hover,
+  &--email:focus {
+    background-color: @mango;
+  }
+
+  &--login:hover,
+  &--login:focus {
+    background-color: @lighter-mango;
+  }
+
+  &--tel:active {
+    background-color: @dusty-orange;
+  }
+
+  &--email:active {
+    background-color: @mango;
+  }
+
+  &--tel:active .user__icon {
+    opacity: 0.3;
+  }
+
+  &--email:active .user__icon {
+    opacity: 0.3;
+  }
+
+  &--login:active {
+    color: @dark-grey-opacity30;
+    background-color: @lighter-mango;
+  }
+}

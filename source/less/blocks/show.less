@@ -1,0 +1,240 @@
+.show {
+  margin-top: 17px;
+  margin-bottom: 23px;
+
+  @media (min-width: @tablet-width) {
+    margin-top: 43px;
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: @desktop-width) {
+    .vertical-paddings (63px, 77px);
+    width: 950px;
+
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.show__button {
+  position: relative;
+  display: block;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 30px;
+  color: @dark-slate-blue;
+  background-color: transparent;
+  border: none;
+
+  margin: 0 60px;
+  padding-left: 35px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    top: 14px;
+    left: 3px;
+    background-color: @dark-slate-blue;
+  }
+
+  &::after {
+    transform: rotate(90deg);
+  }
+
+  &:hover,
+  &:focus {
+    color: @dark-slate-blue-opacity60;
+  }
+
+  &:hover::before,
+  &:hover::after,
+  &:focus::before,
+  &:focus::after {
+    background-color: @dark-slate-blue-opacity60;
+  }
+
+  &:active {
+    color: @dark-slate-blue-opacity30;
+  }
+
+  &:active::before,
+  &:active::after {
+    background-color: @dark-slate-blue-opacity30;
+  }
+
+  @media (min-width: @tablet-width) {
+    font-size: 20px;
+
+    margin: 0 247px;
+    padding-left: 52px;
+
+    &::before,
+    &::after {
+      width: 27px;
+      height: 3px;
+      left: 0;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-left: 344px;
+    padding-left: 52px;
+  }
+}
+
+.show__list {
+  display: flex;
+  list-style-type: none;
+
+  margin: 0;
+  margin-top: 22px;
+  padding: 0;
+  padding-bottom: 46px;
+
+  @media (min-width: @tablet-width) {
+    .vertical-paddings (26px, 24px);
+    width: 688px;
+    background-color: @white;
+    border-radius: 20px;
+
+    margin-top: 49px;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 950px;
+
+    margin-top: 69px;
+  }
+}
+
+.show__link {
+  position: relative;
+  display: block;
+  color: @dark-grey;
+  background-color: @white;
+
+  &:not(.show__link--active):not(.show__link--switch):hover,
+  &:not(.show__link--active):not(.show__link--switch):focus {
+    color: @dark-grey-opacity60;
+  }
+
+  &:not(.show__link--active):not(.show__link--switch):active {
+    .round (50px, 50px, 50%, @light-gold);
+    color: @dark-grey;
+  }
+
+  &--switch {
+    width: 133px;
+    height: 50px;
+  }
+
+  &--next {
+    .border-left-radius (20px, 20px);
+  }
+
+  &--previous {
+    .border-right-radius (20px, 20px);
+  }
+
+  &--next::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 65px;
+    border: 10px solid #1d2e5b;
+    border-left: none;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+
+  &--previous::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 66px;
+    border: 10px solid #1d2e5b;
+    border-right: none;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+
+  &--next:hover::before,
+  &--next:focus::before,
+  &--previous:hover::before,
+  &--previous:focus::before {
+    opacity: 0.6;
+  }
+
+  &--next:active::before,
+  &--previous:active::before {
+    opacity: 0.3;
+  }
+
+  @media (min-width: @tablet-width) {
+    width: 50px;
+    height: 50px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 30px;
+    color: @dark-grey;
+    background-color: transparent;
+
+    &--active {
+      .round (50px, 50px, 50%, @light-gold);
+    }
+
+    &--switch {
+      width: 30px;
+      height: 50px;
+      padding: 0;
+    }
+
+    &--next::before {
+      left: 25px;
+    }
+
+    &--previous::before {
+      left: 13px;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    &--next::before {
+      left: 16px;
+    }
+
+    &--previous::before {
+      left: 4px;
+    }
+  }
+}
+
+.show__item {
+  position: relative;
+
+  &--page {
+    display: none;
+  }
+
+  &--next {
+    margin-right: 1px;
+  }
+
+  @media (min-width: @tablet-width) {
+    &--page {
+      display: block;
+    }
+
+    &--next {
+      margin-right: 25px;
+      margin-left: auto;
+    }
+  }
+}
